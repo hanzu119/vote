@@ -9,57 +9,54 @@
 </head>
 
 <body>
-    <div id="box">
-        <input type="button" @click="post()" value="点我异步获取数据(Post)">
-    </div>
-    <script type="text/javascript">
-        window.onload = function () {
-            var vm = new Vue({
-                el: '#box',
-                data: {
-                    msg: 'Hello World!',
-                },
-                methods: {
-                    post: function () {
-                        //发送 post 请求
-                        ///
-                        //https://mp.weixin.qq.com/s
-                        this.$http.post('https://mp.weixin.qq.com/mp/getappmsgad?f=json&mockid=&rtx=&uin=&key=&pass_ticket=mWQznFB%2FhGQvIkMVN30ilRpFNtuU7lh1sHmSwBTa%2BtmAabnMGxDYTXrJvk1ns6nz&wxtoken=777&devicetype=&clientversion=&__biz=MjM5NjYyMTE0MA%3D%3D&appmsg_token=&x5=0&f=json'
-                            , {
-                                r: 0.14936119121413283,
-                                appmsg_type: 9,
-                                mid: 2651421507,
-                                sn: "7e71c508fec3f2785500105b2a48179f",
-                                idx: 1,
-                                scene: 75,
-                                title: "%E8%BF%98%E8%AE%B0%E5%BE%97%E8%A5%BF%E8%88%AA%E8%81%8C%E9%99%A2%E4%B8%BA%E5%A4%A7%E5%AE%B6%E6%89%93%E4%B8%8B%E7%9A%84%E2%80%9C%E6%96%B0%E6%B1%9F%E5%B1%B1%E2%80%9D%E5%90%97%EF%BC%9F%E6%96%B0%E8%BF%9B%E5%B1%95%E6%9D%A5%E4%BA%86%EF%BC%8C%E4%BA%94%E4%B8%AA%E5%BB%BA%E8%AE%BE%E6%96%B9%E6%A1%88%E7%AD%89%E4%BD%A0%E6%9D%A5%E6%8B%8D%E6%9D%BF%EF%BC%81",
-                                ct: 1601014411,
-                                abtest_cookie: "",
-                                devicetype: "",
-                                version: "",
-                                is_need_ad: 0,
-                                both_ad: 0,
-                                send_time: "",
-                                msg_daily_idx: 1,
-                                pass_ticket: "mWQznFB/hGQvIkMVN30ilRpFNtuU7lh1sHmSwBTa+tmAabnMGxDYTXrJvk1ns6nz",
-                                is_temp_url: 0,
-                                item_show_type: 0,
-                                tmp_version: 1,
-                                pos_type_list: "",
-                                vid_list: [],
-                                exportkey: "A0WHW8OUJ3VGl87v9K5mhnQ%3D",
-                                waid: ""
-                            }
-                            , { emulateJSON: true }).then(function (res) {
-                                document.write(res.body);
-                            }, function (res) {
-                                console.log(res.status);
-                            });
-                    }
+<div id="box">
+    <input type="button" @click="post()" value="点我异步获取数据(Post)">
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var vm = new Vue({
+            el: '#box',
+            data: {
+                msg: 'Hello World!',
+            },
+            methods: {
+                post: function () {
+                    this.$http.post('https://mp.weixin.qq.com/mp/getappmsgad?f=json&mockid=&rtx=&uin=&key=&pass_ticket=mWQznFB%2FhGQvIkMVN30ilRpFNtuU7lh1sHmSwBTa%2BtmAabnMGxDYTXrJvk1ns6nz&wxtoken=777&devicetype=&clientversion=&__biz=MjM5NjYyMTE0MA%3D%3D&appmsg_token=&x5=0&f=json'
+                        , {
+                            r: 0.14936119121413283,
+                            appmsg_type: 9,
+                            mid: 2651421507,
+                            sn: "7e71c508fec3f2785500105b2a48179f",
+                            idx: 1,
+                            scene: 75,
+                            title: "%E8%BF%98%E8%AE%B0%E5%BE%97%E8%A5%BF%E8%88%AA%E8%81%8C%E9%99%A2%E4%B8%BA%E5%A4%A7%E5%AE%B6%E6%89%93%E4%B8%8B%E7%9A%84%E2%80%9C%E6%96%B0%E6%B1%9F%E5%B1%B1%E2%80%9D%E5%90%97%EF%BC%9F%E6%96%B0%E8%BF%9B%E5%B1%95%E6%9D%A5%E4%BA%86%EF%BC%8C%E4%BA%94%E4%B8%AA%E5%BB%BA%E8%AE%BE%E6%96%B9%E6%A1%88%E7%AD%89%E4%BD%A0%E6%9D%A5%E6%8B%8D%E6%9D%BF%EF%BC%81",
+                            ct: 1601014411,
+                            abtest_cookie: "",
+                            devicetype: "",
+                            version: "",
+                            is_need_ad: 0,
+                            both_ad: 0,
+                            send_time: "",
+                            msg_daily_idx: 1,
+                            pass_ticket: "mWQznFB/hGQvIkMVN30ilRpFNtuU7lh1sHmSwBTa+tmAabnMGxDYTXrJvk1ns6nz",
+                            is_temp_url: 0,
+                            item_show_type: 0,
+                            tmp_version: 1,
+                            pos_type_list: "",
+                            vid_list: [],
+                            exportkey: "A0WHW8OUJ3VGl87v9K5mhnQ%3D",
+                            waid: ""
+                        }
+                        , { emulateJSON: true }).then(function (res) {
+                        document.write(res.body);
+                    }, function (res) {
+                        console.log(res.status);
+                    });
                 }
-            });
-        }
-    </script>
+            }
+        });
+    }
+</script>
 </body>
 
 </html>
