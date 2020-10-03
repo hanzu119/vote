@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
+
 # Create your views here.
-class Test:
-    def test(self):
-        pass
+def test(request):
+    print("heihei")
+    return render(request, "my_vote.html")
